@@ -1,0 +1,60 @@
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  width: 60%;
+  flex-direction: column;
+  padding-left: 150px;
+}
+
+.animated-text h5,
+.animated-text h2 {
+  color: white;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  animation: slideInOut 8s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.animated-text h5 {
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  font-weight: normal;
+  user-select: none;
+  animation-delay: 0s; /* بدون تأخير */
+}
+
+.animated-text h2 {
+  font-size: 40px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  margin: 10px 0 0 0;
+  line-height: 1.2;
+  user-select: none;
+  animation-delay: 0.5s; /* تبدأ بعد العنوان بنص ثانية */
+}
+
+@keyframes slideInOut {
+  0% {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  60% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+}

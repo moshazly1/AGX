@@ -1,0 +1,126 @@
+.headers {
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+
+.headers .navbar {
+   padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+  
+}
+.nav-links {
+  display: flex;
+  gap: 5px;
+}
+
+.headers .item {
+display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  margin: 5px 10px;
+  padding: 5px ;
+  font-size: 23px;
+  transition: 0.3s ease;
+}
+.headers .item:hover {
+    color: #007bff;
+}
+.headers .item.active {
+    color: #007bff;
+}
+
+.burger {
+  cursor: pointer;
+  font-size: 30px;
+  color: #007bff;
+  display: none; /* يظهر فقط في الموبايل */
+}
+
+.dropdown-menu {
+display: none;
+  flex-direction: column;
+  gap: 12px;
+  background-color: rgba(0,0,0,0.95);
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-top: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  animation: slideDown 0.3s ease-in-out;
+}
+.dropdown-menu .item {
+  display: none;
+  text-decoration: none;
+  color:#fff;
+font-size: 1.15rem;
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+}
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.center-serch {
+  width: 200px;
+  display: flex;
+}
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #f1f1f1;
+  border-radius: 25px;
+  padding: 5px 10px;
+  margin-left: 20px;
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 5px 10px;
+  width: 110px;
+  font-size: 14px;
+    transition: width 0.4s ease;
+}
+
+.search-bar button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #000;
+  font-size: 16px;
+  
+}
+
+.search-bar:focus-within input{
+  width:200px;
+
+}
+  
+
+.logo img {
+  width: 140px; 
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05); 
+}
+

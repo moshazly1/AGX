@@ -1,0 +1,125 @@
+@media (max-width: 576px) {
+  .container {
+    width: 100%;
+  }
+
+  .logo img {
+    width:50px !important;
+  }
+.search-bar:focus-within input {
+  width: 120px!important;
+  transition: width 0s ease !important;
+}
+.search-bar input {
+  width: 90px !important;
+  transition: width 0.3s ease !important;
+}
+
+.blue-circle-right {
+  width: 400px !important;
+  height: 400px !important;
+}
+
+.center-container {
+    padding-left: 20px !important;
+    width: 80% !important;
+}
+.animated-text h2 {
+    font-size: 25px !important;
+}
+
+}
+
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .logo img {
+    width: 80px !important;
+  }
+
+  
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 720px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .logo img {
+    width: 100px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .headers .item {
+    display: none !important ;
+  }
+
+  .burger {
+    display: flex !important;
+  }
+
+  .dropdown-menu {
+    display: flex !important;
+  }
+
+  .dropdown-menu .item  {
+    display:flex !important ;
+  }
+
+  .center-container {
+    padding-left: 40px !important;
+  
+}
+.animated-text h2 {
+    font-size: 40px !important;
+}
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+
+  .logo img {
+    width: 120px !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .form {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.8) 0% , rgba(255,255,255,0.8) 100%),
+      url('../../Imge/AGX2.jpg');
+  }
+
+  .form-control input {
+    width: 100%;
+  }
+
+  .custom-form {
+    width: 100%;
+  }
+
+  .logo img  {
+    width: 100px !important;
+    height: auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1140px;
+  }
+
+  .logo img {
+    width: 140px !important; /* الحجم الأساسي */
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    width: 1320px;
+  }
+}
