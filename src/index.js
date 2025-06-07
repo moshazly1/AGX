@@ -12,7 +12,7 @@ import './Css/Components/Heders.css'
 import './Css/Components/Homepage.css'
 import'./Css/Components/socialmadi.css'
 import './Css/Components/text.css'
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter  as Router } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
