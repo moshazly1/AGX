@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/AGX/static/css/main.5b68e18f.css",
+    "main.js": "/AGX/static/js/main.58d67860.js",
+    "static/media/AGX.png": "/AGX/static/media/AGX.06a93b3f37743da6d329.png",
+    "static/media/img1.jpg": "/AGX/static/media/img1.a265dbf04e78f6799d85.jpg",
+    "static/media/AGX2.jpg": "/AGX/static/media/AGX2.2e4a0cf461a12d03db79.jpg",
+    "static/media/google-logo-png-open-2000.png": "/AGX/static/media/google-logo-png-open-2000.23d7e8b37501e99225c2.png",
+    "static/media/logo3.png": "/AGX/static/media/logo3.4c5c33762e9e19ca1253.png",
+    "index.html": "/AGX/index.html",
+    "main.5b68e18f.css.map": "/AGX/static/css/main.5b68e18f.css.map",
+    "main.58d67860.js.map": "/AGX/static/js/main.58d67860.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5b68e18f.css",
+    "static/js/main.58d67860.js"
+  ]
+}
