@@ -12,7 +12,7 @@ export const USERS = "users";
 
 // export const LOGOUT = "Accuent/Logout";
 
-export const baseURL = "https://7b979163062c.ngrok-free.app";
+export const baseURL = "https://algorionix.pythonanywhere.com";
 export const REGESTER = "register/";
 export const LOGIN = "login/";
 export const ACTIVATION = "activate/";
