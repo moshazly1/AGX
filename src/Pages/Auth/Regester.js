@@ -2,16 +2,21 @@ import { useState } from "react";
 import axios from "axios";
 import { baseURL, REGESTER } from "../../API/API";
 import Lodingsubmit from "../../Components/Loding/Loding";
-import Googlg from"../../Imge/google-logo-png-open-2000.png" ;
-import Cookie from 'cookie-universal'
+import Googlg from "../../Imge/google-logo-png-open-2000.png";
+import Cookie from "cookie-universal";
+import AlartSuccess from "./AlartSuccess";
+import { Link } from "react-router-dom";
+import Heders from "../Website/Heders";
+import Footer from "../Website/Footer";
 export default function Register() {
   // States
   const [form, setFormData] = useState({
-    name: "",
+    username: "",
     email: "",
     password: "",
   });
 
+  const [successAlert, setSuccessAlert] = useState(false);
   const [loading, setLoading] = useState(false);
   const cookie = Cookie();
   const [err, setErr] = useState("");
@@ -26,100 +31,119 @@ export default function Register() {
     e.preventDefault();
     setLoading(true);
     try {
-     const res =  await axios.post(`${baseURL}/${REGESTER}`, form);
-
+      const res = await axios.post(`${baseURL}/${REGESTER}`, form);
       setLoading(false);
-      const token = res.data.token ;
-     cookie.set("e-commerce" , token)
-      window.location.href = "/users";
+
+      const token = res.data.token;
+      cookie.set("AGX", token);
+      setErr("");
+      setSuccessAlert(true);
+
+      setTimeout(() => {
+        setSuccessAlert(false);
+        window.location.href = "/login";
+      }, 3000);
     } catch (err) {
-       setLoading(false);
-      
-       if (err.response?.status === 422) {
-        setErr("Email is already taken");
-       } else {
-        setErr("Internal Server Error");
-        }
-       }   finally {
-        setLoading(false);
+      console.log(err);
+      setLoading(false);
+      setErr(err.response.data.message);
+    } finally {
+      setLoading(false);
     }
   }
 
   return (
     <>
       {loading && <Lodingsubmit />}
-    <div className="page">      
-      <div className="container">
-        <div className="row h-100">
-          <form className="form" onSubmit={handleSubmit}>
-            <div className="custom-form">
-              <h1 class="typing-animation" >Register Now</h1>
+      <div className="page">
+        <div className="container">
+          <div className="row h-100">
+            <form className="form" onSubmit={handleSubmit}>
+              <div className="custom-form">
+                <h1 className="typing-animation">Register Now</h1>
 
-              <div className="form-control">
-                <input
-                  required
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={form.name}
-                  onChange={handleChange}
-                  placeholder="Enter Your Name..."
-                />
-                <label htmlFor="name">Name</label>
-              </div>
+                <div className="form-control">
+                  <input
+                    required
+                    type="text"
+                    id="name"
+                    name="username"
+                    value={form.username}
+                    onChange={handleChange}
+                    placeholder="Enter Your Name..."
+                  />
+                  <label htmlFor="name">Name</label>
+                </div>
 
-              <div className="form-control">
-                <input
-                  required
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={form.email}
-                  onChange={handleChange}
-                  placeholder="Enter Your Email..."
-                />
-                <label htmlFor="email">Email</label>
-              </div>
+                <div className="form-control">
+                  <input
+                    required
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={form.email}
+                    onChange={handleChange}
+                    placeholder="Enter Your Email..."
+                  />
+                  <label htmlFor="email">Email</label>
+                </div>
 
-              <div className="form-control">
-                <input
-                  minLength={6}
-                  required
-                  type="password"
-                  id="password"
-                  name="password"
-                  value={form.password}
-                  onChange={handleChange}
-                  placeholder="Enter Your Password..."
-                />
-                <label htmlFor="password">Password</label>
-              </div>
+                <div className="form-control">
+                  <input
+                    minLength={6}
+                    required
+                    type="password"
+                    id="password"
+                    name="password"
+                    value={form.password}
+                    onChange={handleChange}
+                    placeholder="Enter Your Password..."
+                  />
+                  <label htmlFor="password">Password</label>
+                </div>
 
-              <button type="submit" className="btn btn-primary">
-                Register
-              </button>
-              <div className="google-btn">
+                <button type="submit" className="btn btn-primary">
+                  Register
+                </button>
+
+                {/* <div className="google-btn">
                   <a href={`http://127.0.0.1:8000/register-google`}>
-                  <div className="google-icon-wrapper">
-                 <img
-                   className="google-icon"
-                   src={Googlg}
-                  alt="Google Logo"
-             />
-              </div>
-              <p className="btn-text">
-          <b>Sign in with Google</b>
-          </p>
-        </a>
-</div>
-              
+                    <div className="google-icon-wrapper">
+                      <img
+                        className="google-icon"
+                        src={Googlg}
+                        alt="Google Logo"
+                      />
+                    </div>
+                    <p className="btn-text">
+                      <b>Sign in with Google</b>
+                    </p>
+                  </a>
+                </div> */}
 
-              {err && <span className="error">{err}</span>}
-            </div>
-          </form>
+                {successAlert && (
+                  <AlartSuccess
+                    message="You’ve registered successfully!"
+                    redirectText="Redirecting to the login page..."
+                  />
+                )}
+                <div className="linkinauth">
+                  <Link
+                    to="/regester"
+                    className="resetpass"
+                    style={{ color: "blue", fontSize: "16px" }}
+                  >
+                    Login
+                  </Link>
+                </div>
+                {err && <span className="error">{err}</span>}
+              </div>
+            </form>
+          </div>
         </div>
-        </div>
-   </div>  
+      </div>
+      <Heders />
+      <Footer />
     </>
   );
 }

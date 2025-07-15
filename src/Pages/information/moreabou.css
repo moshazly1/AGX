@@ -1,0 +1,204 @@
+.m-about {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 100px;
+}
+.a-imge .main-imge {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.a-imge .main-imge img {
+  width: 100%;
+  height: auto;
+}
+
+.a-imge .main-imge::before {
+  content: "";
+  position: absolute;
+  top: -5%;
+  height: 100%;
+  left: -5%;
+  width: 90%;
+  background: rgba(0, 179, 227, 0.3);
+  z-index: -1;
+}
+
+.a-infocom {
+  width: 100%;
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  padding: 5px 10px;
+  color: #212529;
+}
+.a-infocom .a-title {
+  font-weight: bold;
+  font-size: 25px;
+  color: #00b3e3;
+}
+
+.a-infocom p {
+  margin-bottom: 7px;
+}
+
+.who-we-are {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  overflow: hidden;
+  justify-content: space-between;
+}
+.who-we-are .a-item {
+  background-color: #f2f3f4;
+  width: 32%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.who-we-are .a-item:hover .a-imge img {
+  transform: scale(1.1) rotate(3deg);
+}
+.who-we-are .a-item .a-imge img {
+  max-width: 700px;
+  transition: 0.5s ease;
+}
+.who-we-are .a-item .a-imge {
+  width: 100%;
+  height: 230px;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.who-we-are .a-item .a-text {
+  padding-left: 20px;
+  padding-right: 15px;
+  text-align: start;
+}
+.who-we-are .a-item .a-text p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+
+.who-we-are .a-item .a-text .title {
+  color: black;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-size: 23px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+.w-title {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+}
+.contcone {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.riteicone {
+  font-size: 20px;
+  color: #00b3e3;
+  margin-left: -2px;
+  font-weight: bold;
+}
+
+/* ================== MEDIA QUERIES ================== */
+
+@media (max-width: 1200px) {
+  .who-we-are .a-item {
+    width: 48%;
+  }
+  .m-about,
+  .m-about3 .m-about {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .a-imge .main-imge img {
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+    max-height: 900px;
+    max-width: 600px;
+  }
+}
+@media (max-width: 992px) {
+  .who-we-are .a-item {
+    width: 48%;
+  }
+  .m-about,
+  .m-about3 .m-about {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .a-imge .main-imge img {
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+    max-height: 900px;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .m-about,
+  .m-about3 .m-about {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .who-we-are {
+    padding: 10px;
+  }
+
+  .who-we-are .a-item {
+    width: 100%;
+  }
+
+  .a-infocom {
+    font-size: 1rem;
+  }
+
+  .a-imge .main-imge img {
+    width: 100%;
+    height: 100%;
+    max-height: 490px;
+    max-width: 348px;
+  }
+}
+
+@media (max-width: 576px) {
+  .a-infocom .a-title {
+    font-size: 20px;
+  }
+
+  .who-we-are .a-item .a-text .title {
+    font-size: 20px;
+  }
+
+  .w-title {
+    font-size: 16px;
+  }
+
+  .riteicone {
+    font-size: 16px;
+  }
+
+  .contcone {
+    gap: 10px;
+  }
+}

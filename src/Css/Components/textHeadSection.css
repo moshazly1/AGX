@@ -1,0 +1,47 @@
+.hed {
+  position: relative;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+  flex: 0 0 100%;
+  max-width: 100%;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.solign {
+  color: rgba(89, 102, 115, 0.1);
+  font-size: 6rem;
+  position: absolute;
+  top: -3rem;
+  left: 0;
+  right: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  z-index: -1;
+}
+.solign-page {
+  font-size: 5rem;
+  top: -2rem;
+}
+
+.hed-h1 {
+  text-align: center;
+  font-size: 58px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 40px;
+  transform: scale(0.1);
+  animation: zoomIn 2s ease-out forwards;
+  list-style: 1.2;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.2);
+  }
+  to {
+    transform: scale(1);
+  }
+}

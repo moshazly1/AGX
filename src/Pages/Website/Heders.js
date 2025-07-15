@@ -1,77 +1,151 @@
 import { faBars, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
-import logo from   '../../Imge/logo3.png'; 
+import { useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import logo from "../../Imge/logo3.png";
 import axios from "axios";
-
+import Logout from "../Auth/Logout";
+import Cookie from "cookie-universal";
 export default function Heders() {
   const [isOpen, setIsOpen] = useState(false);
-  
- const [serchTerm, setSearchTerm] = useState("");
+  const [showPopup, setShowPopup] = useState(false);
+  const [serchTerm, setSearchTerm] = useState("");
+  const [hasScrolled, setHasScrolled] = useState(false);
 
-  const handleSearchChange = (event) => {
-    setSearchTerm(event.target.value);
-    };
+  const cookie = Cookie();
+  const token = cookie.get("AGXACCESS");
 
+  const handleSearchChange = (event) => setSearchTerm(event.target.value);
 
-   async function handelsubmit(e) {
-   e.preventDefault();
-   try {
- await axios.post(`api/surch` , {
-      serchTerm: serchTerm,
- }) ;
-   } catch (error) {
-   console.log(error);
-   }
-  
-   }
+  async function handelsubmit(e) {
+    e.preventDefault();
+    try {
+      await axios.post(`api/surch`, { serchTerm });
+    } catch (error) {
+      console.log(error);
+    }
+    setShowPopup(false);
+  }
 
-  console.log(serchTerm);
+  useEffect(() => {
+    const HandelScrol = () => setHasScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", HandelScrol);
+    return () => window.removeEventListener("scroll", HandelScrol);
+  }, []);
+
   return (
     <header>
-      <div className="headers">
+      {showPopup && (
+        <div
+          className="search-overlay"
+          onClick={() => setShowPopup(false)}
+        ></div>
+      )}
+
+      <div
+        style={{
+          backgroundColor: hasScrolled ? "white" : "transparent",
+        }}
+        className="headers"
+      >
         <div className="container">
           <div className="navbar">
             <div className="logo">
-              <img src={logo} alt="logo" />
+              <NavLink to="/">
+                <img src={logo} alt="logo" />
+              </NavLink>
             </div>
 
             <div className="nav-links desktop">
-              <NavLink className={({ isActive }) => (isActive ? "item active" : "item")} to="/">Home</NavLink>
-              <NavLink className={({ isActive }) => (isActive ? "item active" : "item")} to="/about">About</NavLink>
-              <NavLink className={({ isActive }) => (isActive ? "item active" : "item")} to="/services">Services</NavLink>
-              <NavLink className={({ isActive }) => (isActive ? "item active" : "item")} to="/contact">Contact</NavLink>
+              {["/", "/moreaboutus", "/solutions", "/services", "/contact"].map(
+                (path, i) => (
+                  <NavLink
+                    key={i}
+                    style={hasScrolled ? { color: "#596673" } : {}}
+                    className={({ isActive }) =>
+                      isActive ? "item active" : "item"
+                    }
+                    to={path}
+                  >
+                    {["Home", "About", "Solutions", "Services", "Contact"][i]}
+                  </NavLink>
+                )
+              )}
             </div>
-           <div className="center-serch" >
-            <form  className="search-bar" onSubmit={ handelsubmit}>
-              
-  <input type="text"  name="seach" value={serchTerm}  onChange={handleSearchChange}  placeholder="Search..." />
-  <button  type="submit" >
-    <FontAwesomeIcon icon={faMagnifyingGlass} />
-  </button>
-</form>
 
-           </div>
+            <div className="right-section">
+              {/* ✅ أيقونة البحث */}
+              {/* <button
+                style={hasScrolled ? { color: "#596673" } : {}}
+                className="search-icon"
+                onClick={() => setShowPopup(true)}
+              >
+                <FontAwesomeIcon icon={faMagnifyingGlass} />
+              </button> */}
 
+              <div className="Auth">
+                {token ? (
+                  <Logout />
+                ) : (
+                  <>
+                    <Link className="btn-auth" to="/login">
+                      Login
+                    </Link>
+                    <Link className="btn-auth" to="/regester">
+                      Register
+                    </Link>
+                  </>
+                )}
+              </div>
 
-
-            <div className="burger" onClick={() => setIsOpen(!isOpen)}>
-              <FontAwesomeIcon icon={faBars} />
+              <div className="burger" onClick={() => setIsOpen(!isOpen)}>
+                <FontAwesomeIcon icon={faBars} />
+              </div>
             </div>
           </div>
 
           {isOpen && (
             <div className="dropdown-menu">
-              <NavLink onClick={() => setIsOpen(false)} className="item" to="/">Home</NavLink>
-              <NavLink onClick={() => setIsOpen(false)} className="item" to="/about">About</NavLink>
-              <NavLink onClick={() => setIsOpen(false)} className="item" to="/services">Services</NavLink>
-              <NavLink onClick={() => setIsOpen(false)} className="item" to="/contact">Contact</NavLink>
+              {["/", "/moreaboutus", "/solutions", "/services", "/contact"].map(
+                (path, i) => (
+                  <NavLink
+                    key={i}
+                    onClick={() => setIsOpen(false)}
+                    className="item"
+                    to={path}
+                  >
+                    {["Home", "About", "Solutions", "Services", "Contact"][i]}
+                  </NavLink>
+                )
+              )}
             </div>
           )}
         </div>
       </div>
-    </header>
 
+      {showPopup && (
+        <>
+          <div
+            className="search-overlay"
+            onClick={() => setShowPopup(false)}
+          ></div>
+
+          <div className="search-popup-box elegant-popup">
+            <form className="popup-search-form modern" onSubmit={handelsubmit}>
+              <div className="search-icon-box">
+                <FontAwesomeIcon icon={faMagnifyingGlass} />
+              </div>
+              <input
+                type="text"
+                placeholder="How can we help ...?"
+                value={serchTerm}
+                onChange={handleSearchChange}
+                autoFocus
+              />
+            </form>
+          </div>
+        </>
+      )}
+    </header>
   );
 }

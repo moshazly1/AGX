@@ -1,0 +1,157 @@
+.form-center {
+  padding: 30px;
+  margin: 30px;
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.uplode {
+  display: none;
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  font-size: 16px;
+}
+
+label {
+  font-weight: bold;
+  color: #495057;
+  font-size: 20px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.btnUPload {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.showImge {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+  border: 1px solid #dee2e6;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+.insedimge {
+  width: 100px;
+}
+.ablodimge {
+  width: 20%;
+  height: auto;
+  max-width: 200px;
+}
+
+.imgeName {
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #343a40;
+}
+
+.info {
+  width: 100%;
+}
+
+.Uplodeimges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+  flex-direction: column;
+  padding: 20px;
+  border: 2px dashed #0086fe;
+  margin: 20px 0;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.Uplodeimges:hover {
+  background-color: #e6f3ff;
+  border-color: #006cd1;
+}
+.Catigory {
+  display: block;
+}
+
+/* =============== */
+
+/* ====== نموذج إضافة التصنيف ====== */
+.add-category-form {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* عناصر الفورم */
+.add-category-form .form-control {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.add-category-form input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  padding-left: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.add-category-form input[type="text"]:focus {
+  border-color: #0086fe;
+}
+
+.add-category-form label {
+  position: absolute;
+  top: -8px;
+  left: 10px;
+  background: white;
+  padding: 0 5px;
+  font-size: 12px;
+  color: #777;
+}
+
+/* زر الإضافة */
+.add-category-btn {
+  background-color: #0086fe;
+  color: white;
+  padding: 10px 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-category-btn:hover {
+  background-color: #0070da;
+}

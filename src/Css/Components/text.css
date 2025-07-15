@@ -27,8 +27,8 @@
 }
 
 .animated-text h2 {
-  font-size: 40px;
-  font-family: 'Montserrat', sans-serif;
+  font-size: 60px;
+  font-family: "Montserrat", sans-serif;
   font-weight: bold;
   margin: 10px 0 0 0;
   line-height: 1.2;
@@ -56,5 +56,44 @@
   100% {
     opacity: 0;
     transform: translateX(-200px);
+  }
+}
+
+/* ✅ ميديا كويري للموبايل */
+@media (max-width: 575.98px) {
+  .center-container {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .animated-text h5 {
+    font-size: 14px;
+  }
+
+  .animated-text h2 {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+}
+
+/* ✅ ميديا كويري للتابلت */
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .center-container {
+    width: 90%;
+    padding-left: 30px;
+    padding-right: 30px;
+    align-items: flex-start;
+  }
+
+  .animated-text h5 {
+    font-size: 16px;
+  }
+
+  .animated-text h2 {
+    font-size: 26px;
+    line-height: 1.3;
   }
 }

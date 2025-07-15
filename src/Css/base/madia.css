@@ -1,42 +1,50 @@
-@media (max-width: 576px) {
+/* @media (max-width: 576px) {
   .container {
     width: 100%;
   }
 
   .logo img {
-    width:50px !important;
+    width: 50px !important;
   }
-.search-bar:focus-within input {
-  width: 120px!important;
-  transition: width 0s ease !important;
-}
-.search-bar input {
-  width: 90px !important;
-  transition: width 0.3s ease !important;
-}
+  .search-bar:focus-within input {
+    width: 120px !important;
+    transition: width 0s ease !important;
+  }
+  .search-bar input {
+    width: 90px !important;
+    transition: width 0.3s ease !important;
+  }
 
-.blue-circle-right {
-  width: 400px !important;
-  height: 400px !important;
-}
+  .blue-circle-right {
+    display: none;
+    top: -150px !important;
+    right: -150px !important;
+    width: 400px !important;
+    height: 400px !important;
+  }
 
-.center-container {
+  .center-container {
     padding-left: 20px !important;
     width: 80% !important;
-}
-.animated-text h2 {
+  }
+  .animated-text h2 {
     font-size: 25px !important;
+  }
 }
-
+@media (max-width: 575.98px) {
+  .AboutInfo h2 {
+    font-weight: 700 !important;
+    font-size: 50px !important;
+  }
+  .AboutInfo .solign {
+    font-size: 6rem !important;
+  }
 }
-
 
 @media (min-width: 576px) and (max-width: 767.98px) {
   .logo img {
     width: 80px !important;
   }
-
-  
 }
 
 @media (min-width: 768px) {
@@ -55,7 +63,10 @@
   .headers .item {
     display: none !important ;
   }
-
+  .AboutInfo h2 {
+    font-weight: 700 !important;
+    font-size: 50px !important;
+  }
   .burger {
     display: flex !important;
   }
@@ -64,17 +75,72 @@
     display: flex !important;
   }
 
-  .dropdown-menu .item  {
-    display:flex !important ;
+  .dropdown-menu .item {
+    display: flex !important ;
   }
 
   .center-container {
     padding-left: 40px !important;
-  
-}
-.animated-text h2 {
+  }
+  .animated-text h2 {
     font-size: 40px !important;
-}
+  }
+
+  .About {
+    flex-direction: row !important;
+    order: 1 !important;
+  }
+
+  .AboutImge {
+    order: 2 !important;
+  }
+
+  .form-group {
+    width: 100% !important;
+  }
+
+  .ask .row {
+    flex-direction: column !important ;
+  }
+
+  .ask h2 {
+    font-size: 20px !important;
+    margin-bottom: 15px !important;
+  }
+  .ask::after {
+    top: -1.5% !important;
+  }
+  .ask::before {
+    bottom: -1.5% !important;
+  }
+  .ask {
+    height: 130vh !important;
+    padding: 10px 20px !important;
+  }
+  .inner-header {
+    height: 25vh !important;
+  }
+  .inner-header .cover {
+    height: 25vh !important;
+  }
+
+  .inner-header .linkeH,
+  .inner-header .linkeA {
+    font-size: 15px !important;
+  }
+  .inner-header .linkeA::after {
+    left: 53px !important;
+  }
+  .gradient-btn {
+    padding: 10px 40px !important;
+  }
+  .contact-page {
+    margin: 5px !important;
+  }
+  .form-group input,
+  .form-group select {
+    width: 100% !important;
+  }
 }
 
 @media (min-width: 992px) {
@@ -86,12 +152,19 @@
     width: 120px !important;
   }
 }
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .AboutInfo .solign {
+    font-size: 9rem !important;
+  }
+}
 
 @media (max-width: 992px) {
   .form {
-    background-image:
-      linear-gradient(rgba(255,255,255,0.8) 0% , rgba(255,255,255,0.8) 100%),
-      url('../../Imge/AGX2.jpg');
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.8) 0%,
+        rgba(255, 255, 255, 0.8) 100%
+      ),
+      url("../../Imge/AGX2.jpg");
   }
 
   .form-control input {
@@ -102,9 +175,39 @@
     width: 100%;
   }
 
-  .logo img  {
+  .logo img {
     width: 100px !important;
     height: auto;
+  }
+  .AboutInfo .solign {
+    font-size: 5.5rem !important;
+  }
+  .AboutInfo h2 {
+    font-size: 30px !important;
+    top: -137px !important;
+    margin-bottom: 20px;
+  }
+  .btn-More {
+    padding: 20px !important;
+  }
+  .About .AboutImge img {
+    max-width: 365px !important;
+  }
+  .InfoWrapper {
+    min-width: 100px !important;
+  }
+  .AboutInfo {
+    left: 0px !important;
+    top: 50px !important;
+    margin: 0px !important;
+    padding: 5px !important;
+    position: relative !important;
+    transform: translateX(-100%);
+  }
+  .AboutText {
+    width: 100% !important;
+    font-size: 15px !important;
+    top: -135px !important;
   }
 }
 
@@ -112,14 +215,387 @@
   .container {
     width: 1140px;
   }
-
-  .logo img {
-    width: 140px !important; /* الحجم الأساسي */
-  }
 }
 
 @media (min-width: 1400px) {
   .container {
     width: 1320px;
+  }
+} */
+
+/* 👶 الهواتف الصغيرة جداً (أقل من 576px) */
+@media (max-width: 575.98px) {
+  .container {
+    width: 100%;
+  }
+
+  .logo img {
+    width: 50px !important;
+  }
+
+  .search-bar:focus-within input {
+    width: 120px !important;
+    transition: width 0s ease !important;
+  }
+
+  .search-bar input {
+    width: 90px !important;
+    transition: width 0.3s ease !important;
+  }
+
+  .center-container {
+    padding-left: 20px !important;
+    width: 80% !important;
+  }
+
+  .animated-text h2 {
+    font-size: 25px !important;
+  }
+
+  .InfoWrapper {
+    /* order: 2 !important; */
+    /* flex: none !important; */
+    /* max-width: 450px !important; */
+  }
+
+  .AboutInfo h2 {
+    font-weight: 700 !important;
+    font-size: 50px !important;
+  }
+
+  .AboutInfo .solign {
+    font-size: 10rem !important;
+  }
+
+  .hed {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  .solign-page {
+    font-size: 2.5rem !important;
+    top: -1rem !important;
+  }
+
+  .solign {
+    font-size: 3.5rem !important;
+    top: -2rem !important;
+  }
+
+  .hed-h1 {
+    font-size: 28px !important;
+  }
+}
+
+/* 📱 هواتف صغيرة (576px إلى أقل من 768px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .logo img {
+    width: 80px !important;
+  }
+
+  .AboutImge {
+    order: 2 !important;
+  }
+  .About {
+    flex-direction: row !important;
+  }
+
+  .InfoWrapper {
+    /* order: 2 !important; */
+    flex: none !important;
+    max-width: 570px !important;
+  }
+
+  .container {
+    width: 540px !important;
+  }
+  .faq-container .solign-page {
+    font-size: 3.5rem !important;
+    top: -1.5rem !important;
+  }
+
+  .solign {
+    font-size: 4.5rem !important;
+    top: -2.5rem !important;
+  }
+
+  .hed-h1 {
+    font-size: 36px !important;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    width: 100% !important;
+  }
+  .container-cards {
+    display: block !important;
+  }
+  .card {
+    margin-bottom: 20px !important;
+  }
+  .who-we-are .a-item {
+    width: 100% !important;
+  }
+
+  .content {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    margin: 20px !important;
+  }
+
+  .ecommerce,
+  .image_ecommerce {
+    flex: 1 1 100% !important ;
+    padding-right: 0 !important;
+    margin-bottom: 30px !important;
+  }
+
+  .ecommerce .ecommerce-p {
+    margin-left: 0 !important;
+    font-size: 14px !important;
+  }
+
+  .ecommerce h2 {
+    margin-left: 0 !important;
+    font-size: 20px !important;
+  }
+}
+
+/* 📱💻 تابلت (768px إلى أقل من 992px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .logo img {
+    width: 100px !important;
+  }
+
+  .solutions .Sitem {
+    flex: 1 1 calc(50% - 20px) !important;
+    max-width: calc(50% - 20px) !important;
+  }
+
+  .container {
+    width: 800px !important;
+  }
+
+  .About {
+    flex-direction: row !important;
+  }
+  .InfoWrapper {
+    flex: none !important;
+    /* order: 2 !important; */
+  }
+
+  .AboutInfo .solign {
+    font-size: 5rem !important;
+  }
+  .solign-page {
+    font-size: 4rem !important;
+    top: -2rem !important;
+  }
+
+  .solign {
+    font-size: 5rem !important;
+    top: -3rem !important;
+  }
+
+  .hed-h1 {
+    font-size: 45px !important;
+  }
+  .who-we-are .a-item {
+    width: 45% !important;
+  }
+}
+
+/* 📏 قواعد عامة أقل من 992px */
+@media (max-width: 991.98px) {
+  .headers .item {
+    display: none !important;
+  }
+
+  .burger,
+  .dropdown-menu,
+  .dropdown-menu .item {
+    display: flex !important;
+  }
+
+  .center-container {
+    padding-left: 40px !important;
+  }
+
+  .animated-text h2 {
+    font-size: 40px !important;
+  }
+
+  .About {
+    flex-direction: row !important;
+    order: 1 !important;
+  }
+
+  .AboutImge {
+    order: 2 !important;
+  }
+
+  .form-group,
+  .form-group input,
+  .form-group select {
+    width: 100% !important;
+  }
+
+  .ask .row {
+    flex-direction: column !important;
+  }
+
+  .ask h2 {
+    font-size: 20px !important;
+    margin-bottom: 15px !important;
+  }
+
+  .ask::after {
+    top: -1.5% !important;
+  }
+
+  .ask::before {
+    bottom: -1.5% !important;
+  }
+
+  .inner-header,
+  .inner-header .cover {
+    height: 25vh !important;
+  }
+
+  .inner-header .linkeH,
+  .inner-header .linkeA {
+    font-size: 15px !important;
+  }
+
+  .inner-header .linkeA::after {
+    left: 53px !important;
+  }
+
+  .gradient-btn {
+    padding: 10px 40px !important;
+  }
+
+  .contact-page {
+    margin: 5px !important;
+  }
+
+  .form {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.8) 0%,
+        rgba(255, 255, 255, 0.8) 100%
+      ),
+      url("../../Imge/AGX2.jpg");
+  }
+
+  .custom-form {
+    width: 100%;
+  }
+
+  .logo img {
+    width: 100px !important;
+    height: auto;
+  }
+
+  .AboutInfo .solign {
+    font-size: 5.7rem !important;
+  }
+
+  .AboutInfo h2 {
+    font-size: 33px !important;
+    top: -137px !important;
+    margin-bottom: 20px;
+  }
+
+  .btn-More {
+    padding: 20px !important;
+  }
+
+  .About .AboutImge img {
+    max-width: 365px !important;
+  }
+
+  .InfoWrapper {
+    min-width: 100px !important;
+  }
+
+  .AboutInfo {
+    left: 0px !important;
+    top: 50px !important;
+    margin: 0px !important;
+    padding: 5px !important;
+    position: relative !important;
+    transform: translateX(-100%);
+  }
+
+  .AboutText {
+    width: 100% !important;
+    font-size: 15px !important;
+    top: -135px !important;
+  }
+}
+
+/* 💻 ديسكتوب متوسط (992px إلى أقل من 1200px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .container {
+    width: 960px !important;
+  }
+
+  .logo img {
+    width: 120px !important;
+  }
+  .AboutInfo .solign {
+    font-size: 8rem !important;
+  }
+  .AboutInfo h2 {
+    font-size: 45px !important;
+    top: -160px !important;
+  }
+}
+
+/* 💻 ديسكتوب كبير (1200px إلى أقل من 1400px) */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .container {
+    width: 1140px !important;
+  }
+}
+
+/* 🖥️ شاشات عريضة جداً (أكثر من 1400px) */
+@media (min-width: 1400px) {
+  .container {
+    width: 1320px !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .solutions {
+    margin: 10px 20px !important;
+    gap: 8px !important;
+  }
+  .solutions .Sitem .SolutionTitle {
+    bottom: 15px !important;
+    font-size: 15px !important;
+  }
+
+  .service-item {
+    flex: 1 1 calc(50% - 20px) !important;
+    max-width: calc(50% - 20px) !important;
+  }
+  .solutions .Sitem {
+    flex: 1 1 calc(50% - 20px) !important;
+    max-width: calc(50% - 20px) !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .solutions {
+    margin: 10px 20px !important;
+  }
+  .solutions .Sitem {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+  }
+  .service-item {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
   }
 }

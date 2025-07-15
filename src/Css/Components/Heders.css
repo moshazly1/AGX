@@ -1,68 +1,70 @@
+/* Header Styles */
 .headers {
-    background-color: transparent;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: 0.6s;
 }
-
 
 .headers .navbar {
-   padding: 10px 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: auto;
-  
+  padding: 2.5px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
 }
+
 .nav-links {
   display: flex;
   gap: 5px;
 }
 
 .headers .item {
-display: inline-block;
+  display: inline-block;
   color: #fff;
   text-decoration: none;
   margin: 5px 10px;
-  padding: 5px ;
+  padding: 5px;
   font-size: 23px;
   transition: 0.3s ease;
 }
-.headers .item:hover {
-    color: #007bff;
-}
+
+.headers .item:hover,
 .headers .item.active {
-    color: #007bff;
+  color: #007bff;
 }
 
 .burger {
   cursor: pointer;
   font-size: 30px;
   color: #007bff;
-  display: none; /* يظهر فقط في الموبايل */
+  display: none;
 }
 
 .dropdown-menu {
-display: none;
+  display: none;
   flex-direction: column;
   gap: 12px;
-  background-color: rgba(0,0,0,0.95);
+  background-color: rgba(0, 0, 0, 0.85);
   padding: 15px 20px;
   border-radius: 8px;
   margin-top: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   animation: slideDown 0.3s ease-in-out;
 }
+
 .dropdown-menu .item {
   display: none;
   text-decoration: none;
-  color:#fff;
-font-size: 1.15rem;
+  color: #fff;
+  font-size: 1.15rem;
   padding: 5px 0;
   border-bottom: 1px solid #eee;
 }
+
 @keyframes slideDown {
   from {
     opacity: 0;
@@ -74,28 +76,23 @@ font-size: 1.15rem;
   }
 }
 
-.center-serch {
-  width: 200px;
-  display: flex;
-}
-.search-bar {
+.right-section {
   display: flex;
   align-items: center;
-  background-color: #f1f1f1;
-  border-radius: 25px;
-  padding: 5px 10px;
-  margin-left: 20px;
+  gap: 15px;
 }
 
-.search-bar input {
-  flex: 1;
+.search-icon {
+  font-size: 25px;
+  color: #fff;
+  background: none;
   border: none;
-  background: transparent;
-  outline: none;
-  padding: 5px 10px;
-  width: 110px;
-  font-size: 14px;
-    transition: width 0.4s ease;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.search-icon:hover {
+  color: #00b3e3;
 }
 
 .search-bar button {
@@ -104,23 +101,284 @@ font-size: 1.15rem;
   cursor: pointer;
   color: #000;
   font-size: 16px;
-  
 }
 
-.search-bar:focus-within input{
-  width:200px;
-
+.search-bar:focus-within input {
+  width: 200px;
 }
-  
 
 .logo img {
-  width: 140px; 
+  width: 140px;
   height: auto;
   object-fit: contain;
   transition: transform 0.3s ease;
 }
 
 .logo img:hover {
-  transform: scale(1.05); 
+  transform: scale(1.05);
 }
 
+/* ✅ تعديل زراري Login / Register */
+.Auth {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  flex-wrap: nowrap;
+}
+
+.btn-auth {
+  padding: 10px 25px;
+  font-size: 16px;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  color: #007bff;
+  background-color: transparent;
+  white-space: nowrap;
+}
+
+.btn-auth:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* خلفية شفافة تغطي الشاشة عند فتح البحث */
+.search-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1500;
+}
+
+/* ✅ نافذة البحث الرئيسية */
+.search-popup-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1600;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 30px 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+  width: 90%;
+  max-width: 400px;
+  animation: fadeIn 0.3s ease;
+}
+
+/* ✅ زر الإغلاق */
+.search-popup-box .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #999;
+}
+
+.search-popup-box .close-btn:hover {
+  color: #000;
+}
+/* خلفية ناعمة شفافة */
+.search-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1500;
+  backdrop-filter: blur(3px);
+  animation: fadeInBg 0.4s ease;
+}
+
+.search-popup-box.elegant-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1600;
+  width: 90%;
+  max-width: 600px;
+  animation: fadeSlideIn 0.5s ease forwards;
+}
+
+/* تصميم الفورم */
+.popup-search-form.modern {
+  display: flex;
+  background: white;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+/* أيقونة البحث */
+.search-icon-box {
+  background-color: #002c33;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 20px;
+  font-size: 20px;
+}
+
+/* حقل الإدخال */
+.popup-search-form input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  padding: 15px 20px;
+  color: #333;
+  font-weight: 400;
+}
+
+.popup-search-form input::placeholder {
+  color: #778088;
+  font-weight: 400;
+}
+
+/* حركات ناعمة */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -30px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes fadeInBg {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ✅ تأثير دخول ناعم */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* ✅ ميديا كويري - موبايل */
+@media (max-width: 575.98px) {
+  .headers .item {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+  .dropdown-menu {
+    display: flex;
+  }
+  .dropdown-menu .item {
+    display: block;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .search-bar input {
+    width: 90px;
+  }
+  .search-bar:focus-within input {
+    width: 140px;
+  }
+  .logo img {
+    width: 80px;
+  }
+
+  /* زراري Login / Register في الموبايل */
+  .Auth {
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .btn-auth {
+    padding: 7px 15px;
+    font-size: 14px;
+  }
+}
+
+/* ✅ ميديا كويري - تابلت */
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .headers .item {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+  .dropdown-menu {
+    display: flex;
+  }
+  .dropdown-menu .item {
+    display: block;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .logo img {
+    width: 100px;
+  }
+  .search-bar input {
+    width: 100px;
+  }
+  .search-bar:focus-within input {
+    width: 180px;
+  }
+
+  /* زراري Login / Register في التابلت */
+  .Auth {
+    justify-content: flex-end;
+    gap: 12px;
+  }
+
+  .btn-auth {
+    padding: 8px 18px;
+    font-size: 15px;
+  }
+}
+
+/* ✅ شاشات ديسكتوب */
+@media (min-width: 992px) {
+  .headers .item {
+    display: inline-block;
+  }
+  .burger {
+    display: none;
+  }
+  .dropdown-menu,
+  .dropdown-menu .item {
+    display: none !important;
+  }
+  .logo img {
+    width: 140px;
+  }
+  .search-bar input {
+    width: 110px;
+  }
+  .search-bar:focus-within input {
+    width: 200px;
+  }
+
+  .Auth {
+    justify-content: flex-end;
+    gap: 15px;
+  }
+}

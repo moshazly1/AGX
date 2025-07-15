@@ -1,43 +1,113 @@
+/* ========== الرئيسية ========== */
 .homepage {
-  background-image: url('../../Imge/img1.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
+  position: relative;
   width: 100%;
-  position: fixed;
+}
+
+/* خلفية الصور المتغيرة */
+.background-wrapper {
+  position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1);
+  transition: opacity 1s ease-in-out;
+  animation: zoomImg 8s ease-in-out infinite;
   z-index: -2;
 }
 
-.homepage .cover {
-  position: fixed ;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.3);
-  height: 100vh;
-  width: 100%;
+.background-image.active {
+  opacity: 1;
   z-index: -1;
 }
+
+@keyframes zoomImg {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.22);
+  }
+}
+
+/* الغلاف الشفاف */
+.homepage .cover {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* ========== الدوائر الزرقاء ========== */
 .blue-circle-right {
-   position: absolute;
+  position: absolute;
   top: -150px;
-  right: -150px; 
+  right: -200px;
   width: 550px;
   height: 550px;
-  background: rgba(0, 188, 251, 0.2); 
+  background: rgba(0, 179, 227, 0.2);
   border-radius: 50%;
-  z-index: 10;
+  z-index: 2;
 }
-.blue-circle-lfet {
-position: absolute;
+
+.blue-circle-left {
+  position: absolute;
   top: 30%;
-  left: -190px; 
+  left: -190px;
   width: 300px;
   height: 300px;
-  background: rgba(57, 94, 107, 0.2); 
+  background: rgba(89, 102, 115, 0.6);
   border-radius: 50%;
-  z-index: 10;
+  z-index: 2;
+}
+
+/* ========== ميديا كويري - الشاشات الصغيرة (موبايل) ========== */
+@media (max-width: 575.98px) {
+  .blue-circle-right {
+    width: 250px;
+    height: 250px;
+    top: -100px;
+    right: -120px;
+  }
+
+  .blue-circle-left {
+    display: none;
+    width: 180px;
+    height: 180px;
+    left: -100px;
+    top: 50%;
+  }
+}
+
+/* ========== ميديا كويري - التابلت ========== */
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .blue-circle-right {
+    width: 400px;
+    height: 400px;
+    top: -120px;
+    right: -150px;
+  }
+
+  .blue-circle-left {
+    width: 240px;
+    height: 240px;
+    left: -130px;
+    top: 35%;
+  }
 }
