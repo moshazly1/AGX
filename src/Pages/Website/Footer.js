@@ -60,7 +60,7 @@ export default function Footer() {
                   className="ficon"
                   icon={faMobileScreenButton}
                 />
-                Egypt: +2 01120369164
+                Egypt: +2 01146391492
               </p>
 
               <p>
@@ -68,9 +68,9 @@ export default function Footer() {
                 <NavLink
                   className="wm"
                   target="_blank"
-                  to="https://wa.me/201156391914"
+                  to="https://wa.me/201080397902"
                 >
-                  +2 01156391914
+                  +2 01080397902
                 </NavLink>
               </p>
               <div className="social-icons">

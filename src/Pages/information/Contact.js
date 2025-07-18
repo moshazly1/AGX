@@ -170,9 +170,9 @@ export default function Contact() {
                 <NavLink
                   className="WM"
                   target="_blank"
-                  to="https://wa.me/201156391914"
+                  to="https://wa.me/201080397902"
                 >
-                  +2 01156391914
+                  +2 01080397902
                 </NavLink>
               </div>
             </div>

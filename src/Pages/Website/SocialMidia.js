@@ -53,7 +53,7 @@ export default function SocialMedia() {
           <NavLink
             className="whats-app"
             target="_blank"
-            to="https://wa.me/201156391914"
+            to="https://wa.me/201080397902"
           >
             <FontAwesomeIcon icon={faWhatsapp} />
           </NavLink>
