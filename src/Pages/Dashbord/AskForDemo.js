@@ -21,6 +21,7 @@ export default function AskForDemo() {
     companyName: "",
     number_of_users: "",
     industry: "",
+    other: "",
     whereAboutUs: "",
   });
 
@@ -48,7 +49,6 @@ export default function AskForDemo() {
     if (!form.emailAddress.trim())
       newErrors.emailAddress = "The field is required";
     if (!form.country.trim()) newErrors.country = "The field is required";
-    if (!form.industry.trim()) newErrors.industry = "The field is required";
     if (!form.number_of_users)
       newErrors.number_of_users = "The field is required";
     if (!form.requested_solution.trim())
@@ -81,6 +81,7 @@ export default function AskForDemo() {
         requested_solution: "",
         companyName: "",
         number_of_users: "",
+        other: "",
         industry: "",
         whereAboutUs: "",
       });
@@ -333,6 +334,22 @@ export default function AskForDemo() {
                   {errors.requested_solution && (
                     <p className="errors">{errors.requested_solution}</p>
                   )}
+                </div>
+              </div>
+
+              <div className="row">
+                <div className="form-group">
+                  <label htmlFor="other" className="lable">
+                    Other Solution
+                  </label>
+                  <input
+                    onChange={handleChange}
+                    value={form.other}
+                    name="other"
+                    id="other"
+                    type="text"
+                    placeholder="Other Solution..."
+                  />
                 </div>
               </div>
 
