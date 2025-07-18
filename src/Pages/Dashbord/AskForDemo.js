@@ -330,6 +330,7 @@ export default function AskForDemo() {
                     <option value="Live Chat for Customers">
                       Live Chat for Customers
                     </option>
+                    <option value="Other Solution">Other Solution</option>
                   </select>
                   {errors.requested_solution && (
                     <p className="errors">{errors.requested_solution}</p>
