@@ -191,7 +191,7 @@ export default function Footer() {
             </div>
           </div>
           <div className="footer-bottom">
-            <p>All rights reserved for Algorionix © 2025</p>
+            <p> © 2025 Mohamed El Shazly – Founder & Owner of Algorionix. </p>
             <span>Powered by Factory Yard</span>
           </div>
         </div>
